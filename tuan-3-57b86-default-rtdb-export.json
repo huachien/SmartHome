@@ -1,0 +1,62 @@
+{
+  "Bedroom": {
+    "Electric devices": {
+      "Air conditioner": "10",
+      "C lights": "1",
+      "Door": "OFF",
+      "Fan": "OFF",
+      "Light": "ON",
+      "PC": "OFF"
+    },
+    "Sensors": {
+      "Brightness": "35",
+      "Gas concentration": "35",
+      "Humidity": "40",
+      "Temperature": "35"
+    }
+  },
+  "Kitchen": {
+    "Electric devices": {
+      "Air conditioner": "24",
+      "Door": "OFF",
+      "Fridge": "-2",
+      "Light": "ON",
+      "Stove": "ON",
+      "Water": "OFF"
+    },
+    "Sensors": {
+      "Brightness": "100",
+      "Gas concentration": "50",
+      "Humidity": "50",
+      "Temperature": "30"
+    }
+  },
+  "Living room": {
+    "Electric devices": {
+      "Air conditioner": "30",
+      "C light": "10",
+      "Door": "ON",
+      "Fan": "ON",
+      "Light": "OFF",
+      "TV": "OFF"
+    },
+    "Sensors": {
+      "Brightness": "30",
+      "Gas concentration": "35",
+      "Humidity": "30",
+      "Temperature": "20"
+    }
+  },
+  "user": {
+    "Chien": {
+      "PhoneNumber": "10927457484",
+      "email": "chien123@gmail.com",
+      "username": "Chien"
+    },
+    "Huy": {
+      "PhoneNumber": "0275984555",
+      "email": "huyaldkjf@gmail.com",
+      "username": "Huy"
+    }
+  }
+}

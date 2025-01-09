@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <title>Smart home</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Side bar -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="img/iconnha.png" alt="home">
+                    <h2 style="color: aliceblue;">Smart <span class="danger">Home</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" class="active" onclick="switchPage(event, 'living_room')">
+                    <span class="material-icons-outlined">
+                        weekend
+                    </span>
+                    <h3>Living room</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'kitchen')">
+                    <span class="material-icons-outlined">
+                        kitchen
+                    </span>
+                    <h3>Kitchen</h3>
+                </a>
+                <a href="" onclick="switchPage(event, 'bedroom')">
+                    <span class="material-icons-outlined">
+                        king_bed
+                    </span>
+                    <h3>Bedroom</h3>
+                </a>
+                <a href="login.html">
+                    <span class="material-icons-outlined">
+                        add
+                    </span>
+                    <h3>New login</h3>
+                </a>
+                <h3></h3>
+            </div>
+        </aside>
+        <!-- End of sidebar -->
+
+        <!-- Main content -->
+        <main>
+            <!-- Sensors -->
+            <div class="nav">
+                <h1 style="color: aliceblue;">Sensors</h1>
+                <div class="right-nav">
+                    <button id="menu-btn">
+                        <span class="material-icons-outlined">
+                            menu
+                        </span>
+                    </button>
+                    <div class="dark-mode">
+                        <span class="material-icons-outlined active">
+                            light_mode
+                        </span>
+                        <span class="material-icons-outlined">
+                            dark_mode
+                        </span>
+                    </div>
+
+                    <div class="profile">
+                        <div class="info">
+                            <p>Chào, <b>Chiến</b></p>
+                            
+                        </div>
+                        <div class="profile-photo">
+                            <img src="img/avt.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="living_room">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_01">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/nhietdo.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_01">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/doam.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="gas_01">00</h1>
+                                    <h1>lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/anhsang.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="bright_01">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1 style="color: aliceblue !important;">Controller</h1>
+                    <div class="device">
+                        <div class="furn" id="light-lr"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fan-lr">
+                            <div class="side1">
+                                <img src="img/quatoff.png" alt="fan img" id="fan-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fan</h1>
+                                <h2 id="fan-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="fan-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="tv">
+                            <div class="side1">
+                                <img src="img/tv-off.png" alt="tv img" id="tv-img">
+                            </div>
+                            <div class="side2">
+                                <h1>TV</h1>
+                                <h2 id="tv-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="tv-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="lamp-lr"> 
+                            <div class="side1">
+                                <img src="img/cuadong.png" alt="lamp img" id="lamp-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Door</h1>
+                                <h2 id="lamp-lr-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="lamp-lr-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-lr">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-lr-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-lr">16</span>
+                                    <h2 id="ac_lr_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-lr-slider">
+                            </div>
+                        </div>                                                  
+                        <div class="furn" id="speaker">
+                            <div class="side1">
+                                <img src="img/dentran0.png" alt="den tran img" id="speaker-img">
+                            </div>
+                            <div class="side2">
+                                <h1>C Lights</h1>
+                                <div class="counit">
+                                    <span id="speakerValue">0</span>
+                                    <h2>%</h2>
+                                </div>
+                                <input type="range" value="0" min="0" max="100" class="range-slider" id="speaker-slider">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <h3>Hứa Văn Chiến - 21119369</h3>
+                        <h3>MSSV: 21119369</h3>
+                        <h3>Điện thoại: +84367049253</h3>
+                        <h3>Email: 21119369@student.hcmute.edu.vn</h3>
+                    </div>           
+                </div>
+            </section>
+            <section id="kitchen" style="display:none">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_02">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/nhietdo.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_02">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/doam.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="gas_02">00</h1>
+                                    <h1>lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/anhsang.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="bright_02">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>Controller</h1>
+                    <div class="device">
+                        <div class="furn" id="light-kc"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-kc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-kc-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-kc-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="hood">
+                            <div class="side1">
+                                <img src="img/cuadong.png" alt="hood img" id="hood-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Door</h1>
+                                <h2 id="hood-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="hood-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-kc">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-kc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-kc">16</span>
+                                    <h2 id="ac_kc_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-kc-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="cooker">
+                            <div class="side1">
+                                <img src="img/locnuocoff.png" alt="cooker img" id="cooker-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Water</h1>
+                                <h2 id="cooker-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="cooker-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fridge">
+                            <div class="side1">
+                                <img src="img/refrigerator-off.png" alt="fridge img" id="fridge-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fridge</h1>
+                                <div class="counit">
+                                    <span id="fridgeValue">16</span>
+                                    <h2 id="fridge_unit">°C</h2>
+                                </div>
+                                <input type="range" value="-18" min="-18" max="4" class="range-slider" id="fridge-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="stove">
+                            <div class="side1">
+                                <img src="img/stove-off.png" alt="stove img" id="stove-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Stove</h1>
+                                <h2 id="stove-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="stove-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <h3>Hứa Văn Chiến - 21119369</h3>
+                        <h3>MSSV: 21119369</h3>
+                        <h3>Điện thoại: +84367049253</h3>
+                        <h3>Email: 21119369@student.hcmute.edu.vn</h3>
+                    </div>           
+                </div>
+            </section>
+            <section id="bedroom" style="display:none">
+                <div class="sensor">
+                    <div class="temperature">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Temperature</h3>
+                                <div class="unit">
+                                    <h1 id="temp_03">00</h1>
+                                    <h1>°C</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/nhietdo.png" alt="temp">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Humidity</h3>
+                                <div class="unit">
+                                    <h1 id="hum_03">00</h1>
+                                    <h1>%</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/doam.png" alt="hum">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gas-detect">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Brightness</h3>
+                                <div class="unit">
+                                    <h1 id="gas_03">00</h1>
+                                    <h1>lux</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/anhsang.png" alt="gas">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brightness">
+                        <div class="status">
+                            <div class="info">
+                                <h3>Gas detector</h3>
+                                <div class="unit">
+                                    <h1 id="bright_03">00</h1>
+                                    <h1>ppm</h1>
+                                </div>
+                            </div>
+                            <div class="sensor-icon">
+                                <img src="img/gas-sensor.png" alt="bright">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controller -->
+                <div class="controller">
+                    <h1>Controller</h1>
+                    <div class="device">
+                        <div class="furn" id="light-br"> 
+                            <div class="side1">
+                                <img src="img/light-off.png" alt="light-bulb img" id="light-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Light</h1>
+                                <h2 id="light-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="light-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="curtain">
+                            <div class="side1">
+                                <img src="img/dentran0.png" alt="curtain img" id="curtain-img">
+                            </div>
+                            <div class="side2">
+                                <h1>C lights</h1>
+                                <div class="counit">
+                                    <h2>Level</h2>
+                                    <span id="curtainValue">16</span>
+                                </div>
+                                <input type="range" value="1" min="1" max="4" class="range-slider" id="curtain-slider">
+                            </div>
+                        </div>
+                        <div class="furn" id="pc">
+                            <div class="side1">
+                                <img src="img/PCoff.png" alt="pc img" id="pc-img">
+                            </div>
+                            <div class="side2">
+                                <h1>PC</h1>
+                                <h2 id="pc-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="pc-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="ac-br">
+                            <div class="side1">
+                                <img src="img/air-conditioning-off.png" alt="ac img" id="ac-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>AC</h1>
+                                <div class="counit">
+                                    <span id="acValue-br">16</span>
+                                    <h2 id="ac_br_unit">°C</h2>
+                                </div>
+                                <input type="range" value="16" min="16" max="33" class="range-slider" id="ac-br-slider">
+                            </div>
+                        </div>                        
+                        <div class="furn" id="lamp-br">
+                            <div class="side1">
+                                <img src="img/cuadong.png" alt="lamp img" id="lamp-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Door</h1>
+                                <h2 id="lamp-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="lamp-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="furn" id="fan-br">
+                            <div class="side1">
+                                <img src="img/quatoff.png" alt="fan img" id="fan-br-img">
+                            </div>
+                            <div class="side2">
+                                <h1>Fan</h1>
+                                <h2 id="fan-br-status">OFF</h2>
+                                <label class="switch">
+                                    <input type="checkbox" id="fan-br-btn">
+                                    <span class="toggle-btn"></span>
+                                </label>
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class="footer">
+                        <h3>Hứa Văn Chiến - 21119369</h3>
+                        <h3>MSSV: 21119369</h3>
+                        <h3>Điện thoại: +84367049253</h3>
+                        <h3>Email: 21119369@student.hcmute.edu.vn</h3>
+                    </div>           
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
