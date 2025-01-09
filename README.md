@@ -6,6 +6,7 @@ SmartHome là một ứng dụng quản lý và giám sát thiết bị nhà th�
 ## Tính năng chính
 - **Giám sát thiết bị nhà thông minh:**
   - Hiển thị thông tin nhiệt độ, độ ẩm và cảnh báo khói thời gian thực.
+  - Điều khiển các thiết bị trong nhà trực tiếp trên giao diện.
 - **Giao diện người dùng thân thiện:**
   - Tích hợp trang chính và trang đăng nhập với thiết kế trực quan.
 - **Tích hợp Firebase:**
